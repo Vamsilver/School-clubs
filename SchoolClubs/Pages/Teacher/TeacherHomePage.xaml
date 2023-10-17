@@ -10,11 +10,13 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="11*"/>
-            <RowDefinition Height="61*"/>
+            <RowDefinition Height="55*"/>
+            <RowDefinition Height="15"/>
+            <RowDefinition Height="299*"/>
+            <RowDefinition Height="15"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="12"/>
+            <ColumnDefinition Width="10"/>
             <ColumnDefinition Width="83*"/>
             <ColumnDefinition Width="396*"/>
             <ColumnDefinition Width="150*"/>
@@ -22,13 +24,14 @@
             <ColumnDefinition Width="50*"/>
             <ColumnDefinition Width="143*"/>
             <ColumnDefinition Width="285*"/>
-            <ColumnDefinition Width="12"/>
+            <ColumnDefinition Width="10"/>
         </Grid.ColumnDefinitions>
         <Rectangle Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="9" Fill="#857885"></Rectangle>
-        <Button Grid.Column="1" VerticalAlignment="Center" Height="60" Grid.ColumnSpan="2" Margin="0,0,396,0">
+        <Button Grid.Column="1" VerticalAlignment="Center" Height="60" Margin="0,0,3,0" Click="Button_Click">
             <TextBlock FontSize="22">Выйти</TextBlock>
         </Button>
         <TextBlock Grid.Column="6" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" Foreground="Orange">Учитель</TextBlock>
         <TextBlock x:Name="TeacherNameTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="7" FontSize="30">Марья Ивановна</TextBlock>
+        <Rectangle Fill="White" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="7"></Rectangle>
     </Grid>
 </Page>
