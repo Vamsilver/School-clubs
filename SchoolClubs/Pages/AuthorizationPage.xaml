@@ -31,7 +31,7 @@
         <TextBox Grid.Row="3" Grid.Column="1" x:Name="LoginTextBox" Background="#218380"></TextBox>
         <TextBlock Grid.Column="1" Grid.Row="5" FontSize="30" HorizontalAlignment="Center">Пароль</TextBlock>
         <TextBox Grid.Row="7" Grid.Column="1" x:Name="PasswordTextBox" Background="#218380"></TextBox>
-        <Button Grid.Column="1" Grid.Row="9" FontSize="38">
+        <Button Grid.Column="1" Grid.Row="9" FontSize="38" Click="Button_Click">
             <TextBlock>Войти</TextBlock></Button>
     </Grid>
 </Page>

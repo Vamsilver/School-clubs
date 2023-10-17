@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SchoolClubs.BD;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +14,6 @@ namespace SchoolClubs
     /// </summary>
     public partial class App : Application
     {
+        public static SchoolEntities connection = new SchoolEntities();
     }
 }

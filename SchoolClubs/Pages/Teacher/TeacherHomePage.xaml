@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:SchoolClubs.Pages.Teacher"
       mc:Ignorable="d" 
       d:DesignHeight="720" d:DesignWidth="1280"
-      Title="TeacherHomePage">
+      Title="TeacherHomePage"
+      Loaded="TeacherHomePageLoaded">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -27,11 +28,16 @@
             <ColumnDefinition Width="10"/>
         </Grid.ColumnDefinitions>
         <Rectangle Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="9" Fill="#857885"></Rectangle>
-        <Button Grid.Column="1" VerticalAlignment="Center" Height="60" Margin="0,0,3,0" Click="Button_Click">
+        <Button Grid.Column="1" VerticalAlignment="Center" Height="60" Margin="0,0,3,0" Background="#FFBC42" Click="Button_Click">
             <TextBlock FontSize="22">Выйти</TextBlock>
         </Button>
         <TextBlock Grid.Column="6" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" Foreground="Orange">Учитель</TextBlock>
-        <TextBlock x:Name="TeacherNameTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="7" FontSize="30">Марья Ивановна</TextBlock>
+        <StackPanel Orientation="Horizontal" Grid.Column="7" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Text="{Binding Name}" Foreground="Orange" FontSize="30" />
+            <TextBlock Text=" " Foreground="Orange" FontSize="30" />
+            <TextBlock Text="{Binding Surname}" Foreground="Orange" FontSize="30" />
+        </StackPanel>
         <Rectangle Fill="White" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="7"></Rectangle>
+        <Image Source="/Pages/Teacher/logo.png" Grid.Column="4"/>
     </Grid>
 </Page>
