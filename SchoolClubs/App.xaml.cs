@@ -13,5 +13,6 @@ namespace SchoolClubs
     /// </summary>
     public partial class App : Application
     {
+        public static ADOApp.SchoolEntities Connection = new ADOApp.SchoolEntities();
     }
 }

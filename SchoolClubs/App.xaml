@@ -4,6 +4,25 @@
              xmlns:local="clr-namespace:SchoolClubs"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="#ffbc42"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Name="ButtonBorder" CornerRadius="30" BorderThickness="2" BorderBrush="DimGray" Background="{TemplateBinding Background}">
+                            <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#FFFFC967"/>
+                </Trigger>
+            </Style.Triggers>
+
+        </Style>
+
+
     </Application.Resources>
 </Application>

@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище SchoolModelContainer" CdmEntityContainer="SchoolEntities">
+    <EntitySetMapping Name="Authorization">
+      <EntityTypeMapping TypeName="SchoolModel.Authorization">
+        <MappingFragment StoreEntitySet="Authorization">
+          <ScalarProperty Name="idAuthorization" ColumnName="idAuthorization" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Class">
+      <EntityTypeMapping TypeName="SchoolModel.Class">
+        <MappingFragment StoreEntitySet="Class">
+          <ScalarProperty Name="idClass" ColumnName="idClass" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="Char" ColumnName="Char" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Group">
+      <EntityTypeMapping TypeName="SchoolModel.Group">
+        <MappingFragment StoreEntitySet="Group">
+          <ScalarProperty Name="idGroup" ColumnName="idGroup" />
+          <ScalarProperty Name="idSection" ColumnName="idSection" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Group_Student">
+      <EntityTypeMapping TypeName="SchoolModel.Group_Student">
+        <MappingFragment StoreEntitySet="Group_Student">
+          <ScalarProperty Name="idGroup_Student" ColumnName="idGroup_Student" />
+          <ScalarProperty Name="idGroup" ColumnName="idGroup" />
+          <ScalarProperty Name="idStudent" ColumnName="idStudent" />
+          <ScalarProperty Name="idStudentStatus" ColumnName="idStudentStatus" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Raport">
+      <EntityTypeMapping TypeName="SchoolModel.Raport">
+        <MappingFragment StoreEntitySet="Raport">
+          <ScalarProperty Name="idRaport" ColumnName="idRaport" />
+          <ScalarProperty Name="idGroup_Student" ColumnName="idGroup_Student" />
+          <ScalarProperty Name="idRaportStatus" ColumnName="idRaportStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Raport_GroupStudent">
+      <EntityTypeMapping TypeName="SchoolModel.Raport_GroupStudent">
+        <MappingFragment StoreEntitySet="Raport_GroupStudent">
+          <ScalarProperty Name="idRaport_GroupStudent" ColumnName="idRaport_GroupStudent" />
+          <ScalarProperty Name="idRaport" ColumnName="idRaport" />
+          <ScalarProperty Name="idGroup_Student" ColumnName="idGroup_Student" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RaportStatus">
+      <EntityTypeMapping TypeName="SchoolModel.RaportStatus">
+        <MappingFragment StoreEntitySet="RaportStatus">
+          <ScalarProperty Name="idRaportStatus" ColumnName="idRaportStatus" />
+          <ScalarProperty Name="State" ColumnName="State" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Role">
+      <EntityTypeMapping TypeName="SchoolModel.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="idRole" ColumnName="idRole" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Section">
+      <EntityTypeMapping TypeName="SchoolModel.Section">
+        <MappingFragment StoreEntitySet="Section">
+          <ScalarProperty Name="idSection" ColumnName="idSection" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="minAge" ColumnName="minAge" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="idUser" ColumnName="idUser" />
+          <ScalarProperty Name="LessonsAmount" ColumnName="LessonsAmount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Student">
+      <EntityTypeMapping TypeName="SchoolModel.Student">
+        <MappingFragment StoreEntitySet="Student">
+          <ScalarProperty Name="idStudent" ColumnName="idStudent" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+          <ScalarProperty Name="Birthdate" ColumnName="Birthdate" />
+          <ScalarProperty Name="idClass" ColumnName="idClass" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StudentStatus">
+      <EntityTypeMapping TypeName="SchoolModel.StudentStatus">
+        <MappingFragment StoreEntitySet="StudentStatus">
+          <ScalarProperty Name="idStudentStatus" ColumnName="idStudentStatus" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Timetable">
+      <EntityTypeMapping TypeName="SchoolModel.Timetable">
+        <MappingFragment StoreEntitySet="Timetable">
+          <ScalarProperty Name="idTimetable" ColumnName="idTimetable" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="idRaport" ColumnName="idRaport" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="SchoolModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="idUser" ColumnName="idUser" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+          <ScalarProperty Name="idRole" ColumnName="idRole" />
+          <ScalarProperty Name="Birthdate" ColumnName="Birthdate" />
+          <ScalarProperty Name="Experience" ColumnName="Experience" />
+          <ScalarProperty Name="idAuthorization" ColumnName="idAuthorization" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
