@@ -19,7 +19,13 @@ namespace SchoolClubs.ADOApp
         {
             this.User = new HashSet<User>();
         }
-    
+
+        public Authorization(string login, string password)
+        {
+            Login = login;
+            Password = password;
+        }
+
         public int idAuthorization { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }

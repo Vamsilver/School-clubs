@@ -19,7 +19,18 @@ namespace SchoolClubs.ADOApp
         {
             this.Section = new HashSet<Section>();
         }
-    
+
+        public User(string name, string surname, string patronymic,  DateTime birthdate, decimal? experience, int idAuthorization)
+        {
+            Name = name;
+            Surname = surname;
+            Patronymic = patronymic;
+            this.idRole = 2;
+            Birthdate = birthdate;
+            Experience = experience;
+            this.idAuthorization = idAuthorization;
+        }
+
         public int idUser { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }

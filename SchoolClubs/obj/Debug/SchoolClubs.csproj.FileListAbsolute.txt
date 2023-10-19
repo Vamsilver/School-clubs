@@ -30,3 +30,5 @@ C:\Users\Елена\Source\Repos\School-clubs\SchoolClubs\obj\Debug\Pages\Direct
 C:\Users\Елена\Source\Repos\School-clubs\SchoolClubs\obj\Debug\SchoolClubs.csproj.CopyComplete
 C:\Users\Елена\Source\Repos\School-clubs\SchoolClubs\obj\Debug\Pages\Director\ListTeacherPage.g.cs
 C:\Users\Елена\Source\Repos\School-clubs\SchoolClubs\obj\Debug\Pages\Director\ListTeacherPage.baml
+C:\Users\Елена\Source\Repos\School-clubs\SchoolClubs\obj\Debug\Pages\Director\AddTeacherPage.g.cs
+C:\Users\Елена\Source\Repos\School-clubs\SchoolClubs\obj\Debug\Pages\Director\AddTeacherPage.baml

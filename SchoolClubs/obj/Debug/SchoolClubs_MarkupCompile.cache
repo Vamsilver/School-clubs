@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Елена\Source\Repos\School-clubs\SchoolClubs\App.xaml
-52138218620
+6-374492686
 21045699239
-25-1602211298
+26-2125987556
 18-1170945645
-MainWindow.xaml;Pages\AuthorizationPage.xaml;Pages\Director\DirectorHomePage.xaml;Pages\Director\ListTeacherPage.xaml;Pages\Teacher\TeacherHomePage.xaml;
+MainWindow.xaml;Pages\AuthorizationPage.xaml;Pages\Director\AddTeacherPage.xaml;Pages\Director\DirectorHomePage.xaml;Pages\Director\ListTeacherPage.xaml;Pages\Teacher\TeacherHomePage.xaml;
 
 False
 

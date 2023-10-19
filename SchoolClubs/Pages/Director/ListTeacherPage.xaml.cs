@@ -70,7 +70,7 @@ namespace SchoolClubs.Pages.Director
 
         private void AddTeacher(object sender, RoutedEventArgs e)
         {
-            //NavigationService.Navigate(new AddTeacherPage);
+            NavigationService.Navigate(new AddTeacherPage(director));
         }
 
        
