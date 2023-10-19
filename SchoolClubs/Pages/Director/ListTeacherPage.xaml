@@ -7,13 +7,15 @@
       mc:Ignorable="d" 
       d:DesignHeight="720" d:DesignWidth="1280"
       Title="ListTeacherPage"
-      Loaded="PageLoaded">
+      Loaded="PageLoaded"
+      Background="White">
 
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="55*"/>
             <RowDefinition Height="15"/>
             <RowDefinition Height="299*"/>
+            <RowDefinition Height="40*"/>
             <RowDefinition Height="15"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -41,54 +43,67 @@
         <Rectangle Fill="White" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="7"></Rectangle>
         <Image Source="/Pages/logo.png" Grid.Column="4"/>
 
-        <Grid Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="7" VerticalAlignment="Top" Margin="30">
-       
-        <DataGrid Name="GridListTeacher" ItemsSource="{Binding teacherList}" AutoGenerateColumns="False" FontSize="30">
-                <DataGrid.Columns>
-                    <DataGridTemplateColumn  Header="Фамилия" Width="300">
-                        <DataGridTemplateColumn.CellTemplate >
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Surname}" FontSize="25" />
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
+        <Grid Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="7" VerticalAlignment="Top" Margin="10">
+            <ScrollViewer HorizontalAlignment="Center" Background="#fdebe1" BorderBrush="#fdebe1">
+                <DataGrid Name="GridListTeacher" ItemsSource="{Binding teacherList}" d:ItemsSource="{d:SampleData ItemCount=25}" 
+                         
+                          
+                          SelectedItem="{Binding selectedTeacher}"
+                          AutoGenerateColumns="False" FontSize="30">
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn  Header="Фамилия" Width="270">
+                            <DataGridTemplateColumn.CellTemplate >
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Surname}" FontSize="25" Padding="5"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
 
-                    <DataGridTemplateColumn Header="Имя" Width="250">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Name}" FontSize="25"/>
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="Имя" Width="200">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Name}" FontSize="25" Padding="5"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
 
 
-                    <DataGridTemplateColumn Header="Отчество" Width="250">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Patronymic}" FontSize="25"/>
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="Отчество" Width="220">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Patronymic}" FontSize="25" Padding="5"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
 
-                    <DataGridTemplateColumn Header="Количество кружков" Width="200" >
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Patronymic}" FontSize="25"/>
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="Список кружков" Width="240" >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding sections}" FontSize="25" TextWrapping="Wrap" Padding="5"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
 
-                    <DataGridTemplateColumn Header="Количество" Width="200">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Patronymic}" FontSize="25"/>
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
-                </DataGrid.Columns>
-            </DataGrid>
+                        <DataGridTemplateColumn Header="Кол-во учеников" Width="260">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding CountStudents}" FontSize="25" Padding="5"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </ScrollViewer>
+        </Grid>
+        <StackPanel Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="7" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal">
+            <Button Height="50" Width="200" Content="Уволить" FontSize="25" Background="red" Margin="0,0,50,0" Click="DeleteTeacher"></Button>
+            <Button Height="50" Width="300" Content="Добавить учителя" FontSize="25" Margin="50,0,0,0" Click="AddTeacher"></Button>
+           
 
-    </Grid>
+        </StackPanel>
+        
+            
+        
 
 
 

@@ -33,5 +33,10 @@ namespace SchoolClubs.ADOApp
         public virtual Role Role { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Section> Section { get; set; }
+
+        public int CountStudents { get; set; }
+
+        public string sections { get; set; }
+
     }
 }

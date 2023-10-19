@@ -20,9 +20,6 @@
                     <Setter Property="Background" Value="#FFFFC967"/>
                 </Trigger>
             </Style.Triggers>
-
         </Style>
-
-
     </Application.Resources>
 </Application>
