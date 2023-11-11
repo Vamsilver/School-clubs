@@ -14,6 +14,7 @@ namespace SchoolClubs
     /// </summary>
     public partial class App : Application
     {
-        public static SchoolEntities connection = new SchoolEntities();
+        public static SchoolEntities1 connection = new SchoolEntities1();
+        public static User currentUser = new User();
     }
 }

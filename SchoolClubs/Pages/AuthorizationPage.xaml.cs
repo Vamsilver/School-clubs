@@ -33,7 +33,8 @@ namespace SchoolClubs.Pages
             if (temp != null)
             {
                 User user = App.connection.User.First(x => x.idAuthorization == temp.idAuthorization);
-                NavigationService.Navigate(new TeacherHomePage(user));
+                NavigationService.Navigate(new TeacherHomePage());
+                App.currentUser = user;
             }
         }
     }

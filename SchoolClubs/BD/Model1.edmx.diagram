@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="9f9acceef4204553b2a9e283d6d371ed" Name="Diagram1">
+      <Diagram DiagramId="0a0cf35c4b6248a98f6d8ef95e842318" Name="Diagram1">
         <EntityTypeShape EntityType="SchoolModel.Authorization" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
         <EntityTypeShape EntityType="SchoolModel.Class" Width="1.5" PointX="5.25" PointY="6.25" IsExpanded="true" />
         <EntityTypeShape EntityType="SchoolModel.Group" Width="1.5" PointX="7.5" PointY="1.5" IsExpanded="true" />
@@ -17,7 +17,7 @@
         <EntityTypeShape EntityType="SchoolModel.Student" Width="1.5" PointX="7.5" PointY="5.875" IsExpanded="true" />
         <EntityTypeShape EntityType="SchoolModel.StudentStatus" Width="1.5" PointX="7.5" PointY="9.125" IsExpanded="true" />
         <EntityTypeShape EntityType="SchoolModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SchoolModel.Timetable" Width="1.5" PointX="12" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolModel.Timetable" Width="1.5" PointX="12" PointY="12.375" IsExpanded="true" />
         <EntityTypeShape EntityType="SchoolModel.User" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="SchoolModel.FK_User_Authorization" ManuallyRouted="false" />
         <AssociationConnector Association="SchoolModel.FK_Student_Class" ManuallyRouted="false" />

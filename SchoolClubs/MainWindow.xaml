@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SchoolClubs"
         mc:Ignorable="d"
-        Title="MainWindow" Height="720" Width="1280">
+        Title="MainWindow" Height="720" Width="1280"
+        WindowState="Maximized">
     <Grid>
-        <Frame x:Name="MainFrame"></Frame>
+        <Frame x:Name="MainFrame"/>
     </Grid>
 </Window>

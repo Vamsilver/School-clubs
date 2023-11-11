@@ -19,6 +19,7 @@ namespace SchoolClubs.BD
         public System.TimeSpan Time { get; set; }
         public System.TimeSpan Duration { get; set; }
         public int idRaport { get; set; }
+        public Nullable<bool> isRaportCreated { get; set; }
     
         public virtual Raport Raport { get; set; }
     }

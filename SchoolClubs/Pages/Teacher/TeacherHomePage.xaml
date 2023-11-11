@@ -18,26 +18,60 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"/>
-            <ColumnDefinition Width="83*"/>
-            <ColumnDefinition Width="396*"/>
-            <ColumnDefinition Width="150*"/>
-            <ColumnDefinition Width="150*"/>
-            <ColumnDefinition Width="50*"/>
-            <ColumnDefinition Width="143*"/>
-            <ColumnDefinition Width="285*"/>
+            <ColumnDefinition Width="49*"/>
+            <ColumnDefinition Width="277*"/>
+            <ColumnDefinition Width="304*"/>
             <ColumnDefinition Width="10"/>
         </Grid.ColumnDefinitions>
-        <Rectangle Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="9" Fill="#857885"></Rectangle>
+        <Rectangle Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="5" Fill="#857885"></Rectangle>
         <Button Grid.Column="1" VerticalAlignment="Center" Height="60" Margin="0,0,3,0" Background="#FFBC42" Click="Button_Click">
             <TextBlock FontSize="22">Выйти</TextBlock>
         </Button>
-        <TextBlock Grid.Column="6" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" Foreground="Orange">Учитель</TextBlock>
-        <StackPanel Orientation="Horizontal" Grid.Column="7" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <TextBlock Text="{Binding Name}" Foreground="Orange" FontSize="30" />
-            <TextBlock Text=" " Foreground="Orange" FontSize="30" />
-            <TextBlock Text="{Binding Surname}" Foreground="Orange" FontSize="30" />
+        <StackPanel Orientation="Horizontal" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" Height="40">
+            <TextBlock HorizontalAlignment="Right" FontSize="30" Foreground="Orange" Text="{Binding Role.Title}" Height="40"></TextBlock>
+            <TextBlock Margin="20 0 0 0" Text="{Binding Name}" Foreground="Orange" FontSize="30" />
+            <TextBlock Margin="20 0 0 0" Text="{Binding Surname}" Foreground="Orange" FontSize="30" />
         </StackPanel>
-        <Rectangle Fill="White" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="7"></Rectangle>
-        <Image Source="/Pages/Teacher/logo.png" Grid.Column="4"/>
+        <Rectangle Fill="White" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="4" Margin="0,15,0,0" Grid.RowSpan="2"></Rectangle>
+        <Image Source="/Pages/Teacher/logo.png" Grid.Column="2" HorizontalAlignment="Right" Width="250"/>
+        <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal">
+            <StackPanel  VerticalAlignment="Center" Height="420">
+                <Button Content="Просмотреть статистику" FontSize="25" Width="400" Height="60" Margin="0 40 0 40"></Button>
+                <Button Content="Записать ученика на кружок" FontSize="25" Width="400" Height="60" Margin="0 40 0 40" Click="EnrollStudentToClubBtnClick"></Button>
+                <Button Content="Просмотреть список кружков" FontSize="25" Width="400" Height="60" Margin="0 40 0 40" Click="ButtonClubsClick"></Button>
+            </StackPanel>
+            <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" Margin="160 30 0 30"/>
+        </StackPanel>
+        <Label Grid.Row="2" Grid.Column="3" HorizontalAlignment="Center" FontSize="50" Content="Занятия"></Label>
+        <Label x:Name="NoRaportLabel" Grid.Row="2" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50" Content="Расписания пока нет"></Label>
+        <ListView Grid.Row="2" Grid.Column="3" HorizontalAlignment="Center" x:Name="TimeTableLV" BorderBrush="#FEF9EF" Background="White" ScrollViewer.VerticalScrollBarVisibility="Visible" Margin="0 100 0 80"  d:ItemsSource="{d:SampleData ItemCount=3}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel  Orientation="Horizontal" Margin="50 0 5 50">
+                        <StackPanel.Style>
+                            <Style TargetType="StackPanel">
+                                <Setter Property="Background" Value="Red"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding isRaportCreated}" Value="true">
+                                        <Setter Property="Background" Value="Green"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </StackPanel.Style>
+                        <StackPanel Orientation="Vertical" Width="200" HorizontalAlignment="Center" >
+                            <Label FontSize="20"  Content="{Binding Date}"></Label>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Width="200" HorizontalAlignment="Center" >
+                            <Label FontSize="20"  Content="{Binding Time}"></Label>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Width="200" HorizontalAlignment="Center" >
+                            <Label FontSize="20"  Content="{Binding GroupTitle}"></Label>
+                        </StackPanel>
+                        <Separator Height="5" Opacity="0"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Content="Создать рапортичку" Width="300" Grid.Row="2" Grid.Column="3" VerticalAlignment="Bottom" FontSize="25" Height="60" Margin="0 20 0 10"></Button>
     </Grid>
 </Page>

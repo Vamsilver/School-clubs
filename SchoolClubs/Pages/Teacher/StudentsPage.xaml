@@ -1,0 +1,34 @@
+﻿<Page x:Class="SchoolClubs.Pages.Teacher.StudentsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SchoolClubs.Pages.Teacher"
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="1280"
+      Title="StudentsPage"
+      Loaded="PageLoaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="55*"/>
+            <RowDefinition Height="15"/>
+            <RowDefinition Height="299*"/>
+            <RowDefinition Height="15"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="7*"/>
+            <ColumnDefinition Width="83*"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <Rectangle Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" Fill="#857885"></Rectangle>
+        <Image Source="/Pages/Teacher/logo.png" Grid.Column="2" HorizontalAlignment="Center" Width="250" Margin="0 0 100 0"/>
+        <StackPanel Orientation="Horizontal" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 20 0" Height="40">
+            <TextBlock FontSize="30" Foreground="Orange" Text="{Binding Role.Title}" Height="40"></TextBlock>
+            <TextBlock Margin="20 0 0 0" Text="{Binding Name}" Foreground="Orange" FontSize="30" />
+            <TextBlock Margin="20 0 0 0" Text="{Binding Surname}" Foreground="Orange" FontSize="30" />
+        </StackPanel>
+        <Rectangle Fill="White" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" Margin="0,15,0,0" Grid.RowSpan="2"></Rectangle>
+        
+    </Grid>
+</Page>

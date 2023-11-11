@@ -25,3 +25,8 @@ C:\Users\user\Source\Repos\School-clubs\SchoolClubs\obj\Debug\SchoolClubs.csproj
 C:\Users\user\Source\Repos\School-clubs\SchoolClubs\obj\Debug\SchoolClubs.csproj.CopyComplete
 C:\Users\user\Source\Repos\School-clubs\SchoolClubs\obj\Debug\SchoolClubs.exe
 C:\Users\user\Source\Repos\School-clubs\SchoolClubs\obj\Debug\SchoolClubs.pdb
+C:\Users\user\Source\Repos\School-clubs\SchoolClubs\obj\Debug\App.baml
+C:\Users\user\source\repos\School-clubs\SchoolClubs\obj\Debug\Pages\Teacher\ClubsPage.g.cs
+C:\Users\user\source\repos\School-clubs\SchoolClubs\obj\Debug\Pages\Teacher\ClubsPage.baml
+C:\Users\user\source\repos\School-clubs\SchoolClubs\obj\Debug\Pages\Teacher\EnrollStudentToClubPage.g.cs
+C:\Users\user\source\repos\School-clubs\SchoolClubs\obj\Debug\Pages\Teacher\EnrollStudentToClubPage.baml

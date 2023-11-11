@@ -25,6 +25,7 @@ namespace SchoolClubs
         {
             InitializeComponent();
             MainFrame.Navigate(new AuthorizationPage());
+            MainFrame.NavigationUIVisibility = NavigationUIVisibility.Hidden;
         }
     }
 }
