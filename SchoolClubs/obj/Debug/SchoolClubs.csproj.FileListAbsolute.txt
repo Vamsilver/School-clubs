@@ -30,3 +30,7 @@ C:\Users\user\source\repos\School-clubs\SchoolClubs\obj\Debug\Pages\Teacher\Club
 C:\Users\user\source\repos\School-clubs\SchoolClubs\obj\Debug\Pages\Teacher\ClubsPage.baml
 C:\Users\user\source\repos\School-clubs\SchoolClubs\obj\Debug\Pages\Teacher\EnrollStudentToClubPage.g.cs
 C:\Users\user\source\repos\School-clubs\SchoolClubs\obj\Debug\Pages\Teacher\EnrollStudentToClubPage.baml
+C:\Users\user\source\repos\School-clubs\SchoolClubs\obj\Debug\Pages\Teacher\GroupsPage.g.cs
+C:\Users\user\source\repos\School-clubs\SchoolClubs\obj\Debug\Pages\Teacher\StudentsPage.g.cs
+C:\Users\user\source\repos\School-clubs\SchoolClubs\obj\Debug\Pages\Teacher\StudentsPage.baml
+C:\Users\user\source\repos\School-clubs\SchoolClubs\obj\Debug\Pages\Teacher\GroupsPage.baml

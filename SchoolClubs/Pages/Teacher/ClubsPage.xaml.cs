@@ -34,7 +34,9 @@ namespace SchoolClubs.Pages.Teacher
 
         private void ClubsLVElementMouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            var id = (int)((TextBlock)sender).Tag;
+            BD.Section section = App.connection.Section.FirstOrDefault(x => x.idSection == id);
+            NavigationService.Navigate(new GroupsPage(section));
         }
 
         private void StudentsListButtonClick(object sender, RoutedEventArgs e)
@@ -42,6 +44,7 @@ namespace SchoolClubs.Pages.Teacher
             if (ClubsLV.SelectedItem != null)
             {
                 BD.Section section = ClubsLV.SelectedItem as BD.Section;
+                NavigationService.Navigate(new GroupsPage(section));
             }
             else
             {

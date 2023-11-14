@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\user\source\repos\School-clubs\SchoolClubs\App.xaml
-61807853129
+8-1662475632
 21746581585
-30-1489281403
+35774024792
 18-1850942775
-MainWindow.xaml;Pages\AuthorizationPage.xaml;Pages\Teacher\EnrollStudentToClubPage.xaml;Pages\Teacher\ClubsPage.xaml;Pages\Teacher\StudentsPage.xaml;Pages\Teacher\TeacherHomePage.xaml;
+MainWindow.xaml;Pages\AuthorizationPage.xaml;Pages\Teacher\ChangeRaportInfo.xaml;Pages\Teacher\EnrollStudentToClubPage.xaml;Pages\Teacher\ClubsPage.xaml;Pages\Teacher\GroupsPage.xaml;Pages\Teacher\StudentsPage.xaml;Pages\Teacher\TeacherHomePage.xaml;
 
 True
 

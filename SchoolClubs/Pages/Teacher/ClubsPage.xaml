@@ -25,9 +25,9 @@
         <Rectangle Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" Fill="#857885"></Rectangle>
         <Image Source="/Pages/Teacher/logo.png" Grid.Column="2" HorizontalAlignment="Center" Width="250" Margin="0 0 100 0"/>
         <StackPanel Orientation="Horizontal" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 20 0" Height="40">
-            <TextBlock FontSize="30" Foreground="Orange" Text="{Binding Role.Title}" Height="40"></TextBlock>
-            <TextBlock Margin="20 0 0 0" Text="{Binding Name}" Foreground="Orange" FontSize="30" />
-            <TextBlock Margin="20 0 0 0" Text="{Binding Surname}" Foreground="Orange" FontSize="30" />
+            <TextBlock  FontSize="30" Foreground="Orange" Text="{Binding Role.Title}" Height="40"></TextBlock>
+            <TextBlock  Margin="20 0 0 0" Text="{Binding Name}" Foreground="Orange" FontSize="30" />
+            <TextBlock  Margin="20 0 0 0" Text="{Binding Surname}" Foreground="Orange" FontSize="30" />
         </StackPanel>
         <Rectangle Fill="White" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" Margin="0,15,0,0" Grid.RowSpan="2"></Rectangle>
         <ListView x:Name="ClubsLV" Grid.Row="2" Grid.Column="2" Margin="0 0 0 100" BorderThickness="0" d:ItemsSource="{d:SampleData ItemCount=10}">
@@ -38,12 +38,12 @@
             </ListBox.ItemContainerStyle>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Background="#857885" Margin="0 10 0 10" MouseDown="ClubsLVElementMouseDown">
-                        <TextBlock Text="{Binding Title}" MouseDown="ClubsLVElementMouseDown" Margin="20" FontSize="40"></TextBlock>
+                    <StackPanel Background="#857885" Margin="0 10 0 10">
+                        <TextBlock Tag="{Binding idSection}" Text="{Binding Title}" MouseDown="ClubsLVElementMouseDown" Margin="20" FontSize="40"></TextBlock>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button Grid.Row="2" Click="StudentsListButtonClick" Grid.Column="2" Content="Просмотреть список учеников" FontSize="30" VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="70" Margin="10" Width="600"></Button>
+        <Button Grid.Row="2" Click="StudentsListButtonClick" Grid.Column="2" Content="Просмотреть список групп" FontSize="30" VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="70" Margin="10" Width="600"></Button>
     </Grid>
 </Page>
