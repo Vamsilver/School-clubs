@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SchoolClubs.BD;
+using SchoolClubs.Pages.Teacher;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,17 @@ namespace SchoolClubs.Pages
         public AuthorizationPage()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Authorization temp = App.connection.Authorization.First(x => x.Login == LoginTextBox.Text && x.Password == PasswordTextBox.Text);
+            if (temp != null)
+            {
+                User user = App.connection.User.First(x => x.idAuthorization == temp.idAuthorization);
+                App.currentUser = user;
+                NavigationService.Navigate(new TeacherHomePage());
+            }
         }
     }
 }

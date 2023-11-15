@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\vamsi\source\repos\SchoolClubs\SchoolClubs\obj\Debug\
+C:\Users\user\source\repos\School-clubs2\SchoolClubs\obj\Debug\
 SchoolClubs
 none
 false
 DEBUG;TRACE
-C:\Users\vamsi\source\repos\SchoolClubs\SchoolClubs\App.xaml
-3157452607
-
-8518688029
-13-1310406943
-MainWindow.xaml;Pages\AuthorizationPage.xaml;Pages\Teacher\TeacherHomePage.xaml;
+C:\Users\user\source\repos\School-clubs2\SchoolClubs\App.xaml
+8-1662475632
+21746581585
+34776913927
+18259273845
+MainWindow.xaml;Pages\AuthorizationPage.xaml;Pages\Teacher\ChangeRaportInfo.xaml;Pages\Teacher\ClubsPage.xaml;Pages\Teacher\EnrollStudentToClubPage.xaml;Pages\Teacher\GroupsPage.xaml;Pages\Teacher\StudentsPage.xaml;Pages\Teacher\TeacherHomePage.xaml;
 
 True
 
