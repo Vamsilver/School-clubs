@@ -86,6 +86,14 @@ namespace SchoolClubs.Pages
                 return;
             }
 
+            Student studentAge = App.connection.Student.FirstOrDefault(x => x.idStudent == grStudLast.idStudent);
+
+            if (CalculateAge(studentAge.Birthdate, DateTime.Now) < (ClubCB.SelectedItem as BD.Section).minAge)
+            {
+                MessageBox.Show($"Возраст студента не соответствует возрастному ограничению кружка: +{(ClubCB.SelectedItem as BD.Section).minAge}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
             Group_Student grStudent = new Group_Student();
             grStudent.idStudentStatus = 1;
             grStudent.idStudent = student.idStudent;
@@ -104,6 +112,15 @@ namespace SchoolClubs.Pages
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new TeacherHomePage());
+        }
+        public int CalculateAge(DateTime birthDate, DateTime now)
+        {
+            int age = now.Year - birthDate.Year;
+
+            if (now.Month < birthDate.Month || (now.Month == birthDate.Month && now.Day < birthDate.Day))
+                age--;
+
+            return age;
         }
     }
 }
