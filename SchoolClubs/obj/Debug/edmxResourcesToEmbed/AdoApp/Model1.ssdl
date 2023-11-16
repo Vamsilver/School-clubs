@@ -1,0 +1,337 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище SchoolModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Authorization">
+    <Key>
+      <PropertyRef Name="idAuthorization" />
+    </Key>
+    <Property Name="idAuthorization" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Login" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Class">
+    <Key>
+      <PropertyRef Name="idClass" />
+    </Key>
+    <Property Name="idClass" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Number" Type="int" Nullable="false" />
+    <Property Name="Char" Type="char" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Group">
+    <Key>
+      <PropertyRef Name="idGroup" />
+    </Key>
+    <Property Name="idGroup" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idSection" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Group_Student">
+    <Key>
+      <PropertyRef Name="idGroup_Student" />
+    </Key>
+    <Property Name="idGroup_Student" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idGroup" Type="int" Nullable="false" />
+    <Property Name="idStudent" Type="int" Nullable="false" />
+    <Property Name="idStudentStatus" Type="int" Nullable="false" />
+    <Property Name="Date" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Raport">
+    <Key>
+      <PropertyRef Name="idRaport" />
+    </Key>
+    <Property Name="idRaport" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Raport_GroupStudent">
+    <Key>
+      <PropertyRef Name="idRaport_GroupStudent" />
+    </Key>
+    <Property Name="idRaport_GroupStudent" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idRaport" Type="int" Nullable="false" />
+    <Property Name="idGroup_Student" Type="int" Nullable="false" />
+    <Property Name="idRaportStatus" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RaportStatus">
+    <Key>
+      <PropertyRef Name="idRaportStatus" />
+    </Key>
+    <Property Name="idRaportStatus" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="State" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="idRole" />
+    </Key>
+    <Property Name="idRole" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Section">
+    <Key>
+      <PropertyRef Name="idSection" />
+    </Key>
+    <Property Name="idSection" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="minAge" Type="int" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="idUser" Type="int" />
+    <Property Name="LessonsAmount" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="idStudent" />
+    </Key>
+    <Property Name="idStudent" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Surname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Patronymic" Type="varchar" MaxLength="50" />
+    <Property Name="Birthdate" Type="date" Nullable="false" />
+    <Property Name="idClass" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StudentStatus">
+    <Key>
+      <PropertyRef Name="idStudentStatus" />
+    </Key>
+    <Property Name="idStudentStatus" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Timetable">
+    <Key>
+      <PropertyRef Name="idTimetable" />
+    </Key>
+    <Property Name="idTimetable" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date" Type="date" Nullable="false" />
+    <Property Name="Time" Type="time" Precision="7" Nullable="false" />
+    <Property Name="Duration" Type="time" Precision="7" Nullable="false" />
+    <Property Name="idRaport" Type="int" Nullable="false" />
+    <Property Name="isRaportCreated" Type="bit" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="idUser" />
+    </Key>
+    <Property Name="idUser" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Surname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Patronymic" Type="varchar" MaxLength="50" />
+    <Property Name="idRole" Type="int" Nullable="false" />
+    <Property Name="Birthdate" Type="date" Nullable="false" />
+    <Property Name="Experience" Type="decimal" Precision="4" Scale="2" />
+    <Property Name="idAuthorization" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Group_Section">
+    <End Role="Section" Type="Self.Section" Multiplicity="1" />
+    <End Role="Group" Type="Self.Group" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Section">
+        <PropertyRef Name="idSection" />
+      </Principal>
+      <Dependent Role="Group">
+        <PropertyRef Name="idSection" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Group_Student_Group">
+    <End Role="Group" Type="Self.Group" Multiplicity="1" />
+    <End Role="Group_Student" Type="Self.Group_Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Group">
+        <PropertyRef Name="idGroup" />
+      </Principal>
+      <Dependent Role="Group_Student">
+        <PropertyRef Name="idGroup" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Group_Student_Student">
+    <End Role="Student" Type="Self.Student" Multiplicity="1" />
+    <End Role="Group_Student" Type="Self.Group_Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="idStudent" />
+      </Principal>
+      <Dependent Role="Group_Student">
+        <PropertyRef Name="idStudent" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Group_Student_StudentStatus">
+    <End Role="StudentStatus" Type="Self.StudentStatus" Multiplicity="1" />
+    <End Role="Group_Student" Type="Self.Group_Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StudentStatus">
+        <PropertyRef Name="idStudentStatus" />
+      </Principal>
+      <Dependent Role="Group_Student">
+        <PropertyRef Name="idStudentStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Raport_GroupStudent_Group_Student">
+    <End Role="Group_Student" Type="Self.Group_Student" Multiplicity="1" />
+    <End Role="Raport_GroupStudent" Type="Self.Raport_GroupStudent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Group_Student">
+        <PropertyRef Name="idGroup_Student" />
+      </Principal>
+      <Dependent Role="Raport_GroupStudent">
+        <PropertyRef Name="idGroup_Student" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Raport_GroupStudent_Raport">
+    <End Role="Raport" Type="Self.Raport" Multiplicity="1" />
+    <End Role="Raport_GroupStudent" Type="Self.Raport_GroupStudent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Raport">
+        <PropertyRef Name="idRaport" />
+      </Principal>
+      <Dependent Role="Raport_GroupStudent">
+        <PropertyRef Name="idRaport" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Raport_GroupStudent_RaportStatus">
+    <End Role="RaportStatus" Type="Self.RaportStatus" Multiplicity="1" />
+    <End Role="Raport_GroupStudent" Type="Self.Raport_GroupStudent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RaportStatus">
+        <PropertyRef Name="idRaportStatus" />
+      </Principal>
+      <Dependent Role="Raport_GroupStudent">
+        <PropertyRef Name="idRaportStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Section_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Section" Type="Self.Section" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Section">
+        <PropertyRef Name="idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_Class">
+    <End Role="Class" Type="Self.Class" Multiplicity="1" />
+    <End Role="Student" Type="Self.Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Class">
+        <PropertyRef Name="idClass" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="idClass" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Timetable_Raport">
+    <End Role="Raport" Type="Self.Raport" Multiplicity="1" />
+    <End Role="Timetable" Type="Self.Timetable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Raport">
+        <PropertyRef Name="idRaport" />
+      </Principal>
+      <Dependent Role="Timetable">
+        <PropertyRef Name="idRaport" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Authorization">
+    <End Role="Authorization" Type="Self.Authorization" Multiplicity="1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Authorization">
+        <PropertyRef Name="idAuthorization" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="idAuthorization" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Role">
+    <End Role="Role" Type="Self.Role" Multiplicity="1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="idRole" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="idRole" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище SchoolModelContainer">
+    <EntitySet Name="Authorization" EntityType="Self.Authorization" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Class" EntityType="Self.Class" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Group" EntityType="Self.Group" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Group_Student" EntityType="Self.Group_Student" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Raport" EntityType="Self.Raport" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Raport_GroupStudent" EntityType="Self.Raport_GroupStudent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RaportStatus" EntityType="Self.RaportStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Section" EntityType="Self.Section" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StudentStatus" EntityType="Self.StudentStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Timetable" EntityType="Self.Timetable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Group_Section" Association="Self.FK_Group_Section">
+      <End Role="Section" EntitySet="Section" />
+      <End Role="Group" EntitySet="Group" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Group_Student_Group" Association="Self.FK_Group_Student_Group">
+      <End Role="Group" EntitySet="Group" />
+      <End Role="Group_Student" EntitySet="Group_Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Group_Student_Student" Association="Self.FK_Group_Student_Student">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="Group_Student" EntitySet="Group_Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Group_Student_StudentStatus" Association="Self.FK_Group_Student_StudentStatus">
+      <End Role="StudentStatus" EntitySet="StudentStatus" />
+      <End Role="Group_Student" EntitySet="Group_Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Raport_GroupStudent_Group_Student" Association="Self.FK_Raport_GroupStudent_Group_Student">
+      <End Role="Group_Student" EntitySet="Group_Student" />
+      <End Role="Raport_GroupStudent" EntitySet="Raport_GroupStudent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Raport_GroupStudent_Raport" Association="Self.FK_Raport_GroupStudent_Raport">
+      <End Role="Raport" EntitySet="Raport" />
+      <End Role="Raport_GroupStudent" EntitySet="Raport_GroupStudent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Raport_GroupStudent_RaportStatus" Association="Self.FK_Raport_GroupStudent_RaportStatus">
+      <End Role="RaportStatus" EntitySet="RaportStatus" />
+      <End Role="Raport_GroupStudent" EntitySet="Raport_GroupStudent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Section_User" Association="Self.FK_Section_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Section" EntitySet="Section" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_Class" Association="Self.FK_Student_Class">
+      <End Role="Class" EntitySet="Class" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Timetable_Raport" Association="Self.FK_Timetable_Raport">
+      <End Role="Raport" EntitySet="Raport" />
+      <End Role="Timetable" EntitySet="Timetable" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Authorization" Association="Self.FK_User_Authorization">
+      <End Role="Authorization" EntitySet="Authorization" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Role" Association="Self.FK_User_Role">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

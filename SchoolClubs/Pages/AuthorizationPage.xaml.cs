@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SchoolClubs.AdoApp;
+using SchoolClubs.Pages.Director;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,11 @@ namespace SchoolClubs.Pages
         public AuthorizationPage()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Pages.Director.Clubs());
         }
     }
 }
