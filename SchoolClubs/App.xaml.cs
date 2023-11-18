@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SchoolClubs.ADOApp;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +14,7 @@ namespace SchoolClubs
     /// </summary>
     public partial class App : Application
     {
+        public static SchoolEntities Connection = new SchoolEntities();
+        public static User CurrentUser = new User();
     }
 }

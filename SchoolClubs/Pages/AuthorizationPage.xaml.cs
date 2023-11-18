@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SchoolClubs.Pages.Director;
+using SchoolClubs.Pages.Teacher;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,30 @@ namespace SchoolClubs.Pages
         public AuthorizationPage()
         {
             InitializeComponent();
+        }
+
+        private void Auth(object sender, RoutedEventArgs e)
+        {
+            var data = App.Connection.Authorization.Where(z => z.Login == LoginTextBox.Text && z.Password == PasswordTextBox.Text).FirstOrDefault();
+
+            if (data != null)
+            {
+                var user = App.Connection.User.Where(z => z.idAuthorization == data.idAuthorization).FirstOrDefault();
+                MessageBox.Show("Успешно", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                if (user.idRole == 1)
+                {
+                    NavigationService.Navigate(new DirectorHomePage(user));
+                }
+                else
+                {
+                    NavigationService.Navigate(new TeacherHomePage());
+                }
+            }
+            else
+            {
+                MessageBox.Show("Неверный логин или пароль", "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }

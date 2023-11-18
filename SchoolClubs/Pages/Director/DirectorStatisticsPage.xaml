@@ -1,0 +1,171 @@
+﻿<Page x:Class="SchoolClubs.Pages.Director.DirectorStatisticsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SchoolClubs.Pages.Director"
+      xmlns:DV="clr-namespace:System.Windows.Controls.DataVisualization;assembly=System.Windows.Controls.DataVisualization.Toolkit"  
+      xmlns:DVC="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="1280"
+      Title="DirectorStatisticsPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="107*"/>
+            <RowDefinition Height="15"/>
+            <RowDefinition Height="291*"/>
+            <RowDefinition Height="291*"/>
+            <RowDefinition Height="15"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="479*"/>
+            <ColumnDefinition Width="150*"/>
+            <ColumnDefinition Width="150*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="143*"/>
+            <ColumnDefinition Width="285*"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+
+        <Rectangle Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="8" Fill="#857885"></Rectangle>
+
+        <TextBlock Grid.Column="5" VerticalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" HorizontalAlignment="Center" 
+                   FontSize="28" Foreground="Orange">Зам. Директора
+        </TextBlock>
+        <TextBlock x:Name="TeacherNameTextBlock" VerticalAlignment="Center" 
+                   HorizontalAlignment="Center" Grid.Column="6" FontSize="30">Марья Ивановна
+        </TextBlock>
+        <Rectangle Fill="White" Grid.Column="1" Grid.Row="2" 
+                   Grid.ColumnSpan="6" Grid.RowSpan="2"/>
+
+        <StackPanel Grid.Row="2" Grid.RowSpan="2"
+                    Grid.Column="1" Grid.ColumnSpan="2">
+            <TextBlock HorizontalAlignment="Center" FontSize="36"
+                       Margin="0,0,0,20">Рейтинг учителей
+            </TextBlock>
+            <ListView Height="480" x:Name="TeacherRatingListView" 
+                      ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
+                      ScrollViewer.CanContentScroll="True"
+                      ScrollViewer.VerticalScrollBarVisibility="Visible"
+                      Margin="0,0,7.5,0">
+                <ListView.View>
+                    <GridView AllowsColumnReorder="False">
+                        <GridView.ColumnHeaderContainerStyle>
+                            <Style>
+                                <Setter Property="TextElement.FontSize" Value="20"/>
+                            </Style>
+                        </GridView.ColumnHeaderContainerStyle>
+                        <GridView.Columns>
+                            <GridViewColumn Header="№" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock FontSize="18"
+                                                   Text="{Binding Number}">
+                                        </TextBlock>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="ФИО" Width="405">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock FontSize="18"
+                                                   Text="{Binding FullName}">
+                                        </TextBlock>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="Очки" Width="120">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding StringFormat={}{0} Очков,
+                                                   Path=Points}"
+                                                   FontSize="18">
+                                        </TextBlock>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                        </GridView.Columns>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="4" Margin="7.5,0,0,0">
+            <TextBlock HorizontalAlignment="Center" FontSize="24"
+                       Margin="0,10,0,27">Количество учеников
+            </TextBlock>
+            <ListView Height="205" x:Name="NumberOfStudentsListView" 
+                      ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
+                      ScrollViewer.CanContentScroll="True"
+                      ScrollViewer.VerticalScrollBarVisibility="Visible">
+                <ListView.View>
+                    <GridView AllowsColumnReorder="False">
+                        <GridView.Columns>
+                            <GridViewColumn Width="140" Header="ФИО">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock FontSize="14" FontStretch="Expanded"
+                                                   Text="{Binding FullName}">
+                                        </TextBlock>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="График" Width="398">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Style="{StaticResource Procent}" 
+                                                   Foreground="#218380"
+                                                   FontSize="12.6" FontStretch="Expanded"
+                                                   Text="{Binding Line}">
+                                        </TextBlock>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="%" Width="50">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding StringFormat={}{0} %,
+                                                   Path=Procent}"
+                                                   FontSize="14">
+                                        </TextBlock>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                        </GridView.Columns>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
+
+        <TextBlock Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="4" 
+                   HorizontalAlignment="Center"
+                   FontSize="24">
+            Посещаемость занятий (%)
+        </TextBlock>
+
+        <StackPanel Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="4">
+            <DVC:Chart x:Name="LessonsTaughtChart" Height="290" BorderThickness="0">
+                <DVC:Chart.Series>
+                    <DVC:PieSeries>
+                        <DVC:PieSeries.Title>
+                            <TextBlock>
+                                Посещаемость занятий
+                            </TextBlock>
+                        </DVC:PieSeries.Title>
+                        <DVC:PieSeries.IndependentValueBinding>
+                            <Binding Path="Key">
+                            </Binding>
+                        </DVC:PieSeries.IndependentValueBinding>
+
+                        <DVC:PieSeries.DependentValueBinding>
+                            <Binding Path="Value">
+                            </Binding>
+                        </DVC:PieSeries.DependentValueBinding>
+                    </DVC:PieSeries>
+                </DVC:Chart.Series>
+            </DVC:Chart>
+        </StackPanel>
+    </Grid>
+</Page>

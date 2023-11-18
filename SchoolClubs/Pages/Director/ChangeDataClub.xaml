@@ -1,0 +1,80 @@
+﻿<Page x:Class="SchoolClubs.Pages.Director.ChangeDataClub"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SchoolClubs.Pages.Director"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ChangeDataClub">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="55*"/>
+            <RowDefinition Height="15"/>
+            <RowDefinition Height="299*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="15"/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="83*"/>
+            <ColumnDefinition Width="396*"/>
+            <ColumnDefinition Width="150*"/>
+            <ColumnDefinition Width="150*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="143*"/>
+            <ColumnDefinition Width="285*"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <Rectangle Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="9" Fill="#857885"></Rectangle>
+        <StackPanel Grid.Column="3" Grid.ColumnSpan="2">
+            <Image Source="C:\Users\besit\Source\Repos\School-clubs\SchoolClubs\Images\Schoolcon.png"></Image>
+        </StackPanel>
+        <StackPanel VerticalAlignment="Center" Orientation="Horizontal" Grid.Column="2">
+            <TextBlock FontSize="16">
+<Hyperlink NavigateUri="Clubs.xaml" Foreground="White">Кружки</Hyperlink>
+            </TextBlock>
+            <TextBlock FontSize="16">
+<Hyperlink Foreground="White">/Добавить кружок</Hyperlink>
+            </TextBlock>
+        </StackPanel>
+        <Grid Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="5*"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <StackPanel VerticalAlignment="Center" Grid.Column="1">
+                <TextBlock FontSize="20" HorizontalAlignment="Center">Название кружка</TextBlock>
+                <TextBox  Height="30" Foreground="White" x:Name="TbClubName" Background="#857885"></TextBox>
+                <TextBlock FontSize="20" HorizontalAlignment="Center">Минимальный возраст</TextBlock>
+                <TextBox Height="30" Foreground="White" x:Name="TbMinAge" Background="#857885"></TextBox>
+                <TextBlock FontSize="20" HorizontalAlignment="Center">Описание</TextBlock>
+                <TextBox Height="30" Foreground="White" x:Name="TbDescription" Background="#857885"></TextBox>
+                <TextBlock FontSize="20" HorizontalAlignment="Center">Учитель</TextBlock>
+                <ComboBox Height="45" x:Name="CbSelectTeacher">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <ComboBoxItem Content="{Binding FullName}"></ComboBoxItem>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+                <TextBlock FontSize="20"></TextBlock>
+                <Button x:Name="BtnSave" Click="BtnSave_Click" Height="30" Background="#ffbc42">Сохранить</Button>
+            </StackPanel>
+        </Grid>
+        <StackPanel Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3">
+            <Image Height="490" Source="\Images\Circles.png"></Image>
+        </StackPanel>
+        <StackPanel VerticalAlignment="Center" Grid.Column="6">
+            <TextBlock FontSize="16" Foreground="#ffbc42" HorizontalAlignment="Center">Зам</TextBlock>
+            <TextBlock FontSize="16" Foreground="#ffbc42" HorizontalAlignment="Center">Директора</TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Column="7">
+            <TextBlock x:Name="TbName"></TextBlock>
+            <TextBlock x:Name="TbSurname"></TextBlock>
+        </StackPanel>
+    </Grid>
+</Page>

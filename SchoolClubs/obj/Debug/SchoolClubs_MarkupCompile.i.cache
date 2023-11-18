@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\vamsi\source\repos\SchoolClubs\SchoolClubs\App.xaml
-3157452607
+181149222077
+21663657201
+49-832421955
+20-1690138156
+MainWindow.xaml;Pages\AuthorizationPage.xaml;Pages\Director\AddLessonPage.xaml;Pages\Director\AddSection.xaml;Pages\Director\AddTeacherPage.xaml;Pages\Director\ChangeDataClub.xaml;Pages\Director\Clubs.xaml;Pages\Director\DirectorHomePage.xaml;Pages\Director\DirectorStatisticsPage.xaml;Pages\Director\ListTeacherPage.xaml;Pages\Director\Timetable.xaml;Pages\Teacher\ChangeRaportInfo.xaml;Pages\Teacher\ClubsPage.xaml;Pages\Teacher\EnrollStudentToClubPage.xaml;Pages\Teacher\GroupsPage.xaml;Pages\Teacher\StudentsPage.xaml;Pages\Teacher\TeacherStatisticsPage.xaml;Pages\Teacher\TeacherHomePage.xaml;
 
-8518688029
-13-1310406943
-MainWindow.xaml;Pages\AuthorizationPage.xaml;Pages\Teacher\TeacherHomePage.xaml;
-
-True
+False
 
