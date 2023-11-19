@@ -1,0 +1,106 @@
+﻿<Page x:Class="SchoolClubs.Pages.Director.ListTeacherPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SchoolClubs.Pages.Director"
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="1280"
+      Title="ListTeacherPage"
+      Loaded="PageLoaded"
+      Background="White">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="55*"/>
+            <RowDefinition Height="15"/>
+            <RowDefinition Height="299*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="15"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="83*"/>
+            <ColumnDefinition Width="396*"/>
+            <ColumnDefinition Width="150*"/>
+            <ColumnDefinition Width="150*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="143*"/>
+            <ColumnDefinition Width="285*"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <Rectangle Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="9" Fill="#857885"></Rectangle>
+        <StackPanel Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center" Margin="10">
+            <TextBlock FontSize="16">
+                <Hyperlink Foreground="White" Click="Hyperlink_Click">Главная /</Hyperlink>
+                <Hyperlink Foreground="White">Список учителей</Hyperlink>
+            </TextBlock>
+        </StackPanel>
+
+        <StackPanel  Grid.Column="6" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" Foreground="Orange">Зам</TextBlock>
+            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" Foreground="Orange">директора</TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Column="7" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Text="{Binding Name}" Foreground="Orange" FontSize="30" />
+            <TextBlock Text=" " Foreground="Orange" FontSize="30" />
+            <TextBlock Text="{Binding Surname}" Foreground="Orange" FontSize="30" />
+        </StackPanel>
+        <Rectangle Fill="White" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="7"></Rectangle>
+        <Image Source="/Pages/logo.png" Grid.Column="4"/>
+
+        <Grid Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="7" VerticalAlignment="Top" Margin="10">
+            <ScrollViewer HorizontalAlignment="Center" Background="#fdebe1" BorderBrush="#fdebe1">
+                <DataGrid Name="GridListTeacher" ItemsSource="{Binding teacherList}" d:ItemsSource="{d:SampleData ItemCount=25}" 
+                          SelectedItem="{Binding selectedTeacher}"
+                          AutoGenerateColumns="False" FontSize="30">
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn  Header="Фамилия" Width="270">
+                            <DataGridTemplateColumn.CellTemplate >
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding surname}" FontSize="25" Padding="5"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Header="Имя" Width="200">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding name}" FontSize="25" Padding="5"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Header="Отчество" Width="220">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding patronymic}" FontSize="25" Padding="5"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Header="Список кружков" Width="240" >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding sections}" FontSize="25" TextWrapping="Wrap" Padding="5"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Header="Кол-во учеников" Width="260">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding countStudent}" FontSize="25" Padding="5"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </ScrollViewer>
+        </Grid>
+        <StackPanel Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="7" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal">
+            <Button Height="50" Width="200" Content="Уволить" FontSize="25" Background="#D81159" Margin="0,0,50,0" Click="DeleteTeacher"></Button>
+            <Button Height="50" Width="300" Content="Добавить учителя" FontSize="25" Margin="50,0,0,0" Click="AddTeacher"></Button>
+        </StackPanel>
+    </Grid>
+</Page>
