@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:SchoolClubs.Pages.Director"
       mc:Ignorable="d" 
       d:DesignHeight="720" d:DesignWidth="1280"
-      Title="AddTeacherPage" Loaded="Page_Loaded">
+      Title="AddTeacherPage"
+      Loaded="Page_Loaded">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -28,6 +29,13 @@
             <ColumnDefinition Width="10"/>
         </Grid.ColumnDefinitions>
         <Rectangle Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="9" Fill="#857885"></Rectangle>
+        <StackPanel Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center" Margin="10">
+            <TextBlock FontSize="16">
+                <Hyperlink Foreground="White" Click="Hyperlink_Click">Главная /</Hyperlink>
+                <Hyperlink Foreground="White" Click="Hyperlink_Click_1">Список учителей/</Hyperlink>
+                <Hyperlink Foreground="White">Добавить учителя</Hyperlink>
+            </TextBlock>
+        </StackPanel>
 
         <StackPanel  Grid.Column="6" VerticalAlignment="Center" HorizontalAlignment="Center">
             <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" Foreground="Orange">Зам</TextBlock>
@@ -39,7 +47,7 @@
             <TextBlock Text="{Binding Surname}" Foreground="Orange" FontSize="30" />
         </StackPanel>
         <Rectangle Fill="White" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="7"></Rectangle>
-        <Image Source="/Images/Schoolcon.png" Grid.Column="3" Grid.ColumnSpan="2"/>
+        <Image Source="/Images/Schoolcon.png" Grid.Column="3" Grid.Row="0" Grid.ColumnSpan="2"/>
 
         <StackPanel Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="2" Margin="60,20,60,0" Orientation="Vertical">
             <TextBlock FontSize="30" HorizontalAlignment="Center" Margin="10">Фамилия</TextBlock>

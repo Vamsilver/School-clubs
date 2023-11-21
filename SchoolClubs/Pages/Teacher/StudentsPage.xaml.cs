@@ -90,5 +90,10 @@ namespace SchoolClubs.Pages.Teacher
                 }
             }
         }
+
+        private void HyperlinkClick(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new GroupsPage(_group.Section));
+        }
     }
 }

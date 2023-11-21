@@ -63,6 +63,11 @@ namespace SchoolClubs.Pages.Director
             }
 
         }
+
+        private void PageLoaded(object sender, RoutedEventArgs e)
+        {
+            this.DataContext = App.CurrentUser;
+        }
     }
 }
 

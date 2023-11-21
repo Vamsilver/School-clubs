@@ -52,11 +52,11 @@
             <Button Height="30" x:Name="BtnAddLesson" Click="BtnAddLesson_Click">Добавить урок</Button>
         </StackPanel>
         <StackPanel Grid.Column="3" Grid.ColumnSpan="2">
-            <Image Source="C:\Users\besit\Source\Repos\School-clubs\SchoolClubs\Images\Schoolcon.png"></Image>
+            <Image Source="\Images\Schoolcon.png"></Image>
         </StackPanel>
         <StackPanel VerticalAlignment="Center" Orientation="Horizontal" Grid.Column="2">
             <TextBlock FontSize="16">
-                <Hyperlink Foreground="White">Главнвая</Hyperlink>
+                <Hyperlink Foreground="White" NavigateUri="DirectorHomePage.xaml">Главная</Hyperlink>
             </TextBlock>
             <TextBlock FontSize="16">
                 <Hyperlink Foreground="White">/Расписание</Hyperlink>

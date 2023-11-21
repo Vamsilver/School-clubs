@@ -42,6 +42,7 @@
         </StackPanel>
         <Rectangle Fill="White" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="7"></Rectangle>
         <Image Source="/Images/Schoolcon.png" Grid.Column="3" Grid.ColumnSpan="2"/>
+        <Image Source="/Images/Circles.png" Grid.Column="4" Grid.Row="2" Grid.ColumnSpan="4"/>
         <StackPanel Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3">
             <Button VerticalAlignment="Center" Height="65" Margin="20,35,20,30" Click="GoListTeacher">
                 <TextBlock FontSize="36" VerticalAlignment="Center">Список учителей</TextBlock>

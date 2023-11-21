@@ -30,11 +30,11 @@
         </Grid.ColumnDefinitions>
         <Rectangle Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="9" Fill="#857885"></Rectangle>
         <StackPanel Grid.Column="3" Grid.ColumnSpan="2">
-            <Image Source="C:\Users\besit\Source\Repos\School-clubs\SchoolClubs\Images\Schoolcon.png"></Image>
+            <Image Source="\Images\Schoolcon.png"></Image>
         </StackPanel>
         <StackPanel VerticalAlignment="Center" Orientation="Horizontal" Grid.Column="2">
             <TextBlock FontSize="16">
-<Hyperlink Foreground="White">Главная</Hyperlink>
+<Hyperlink Foreground="White" NavigateUri="DirectorHomePage.xaml">Главная</Hyperlink>
             </TextBlock>
             <TextBlock FontSize="16">
 <Hyperlink Foreground="White">/Кружки</Hyperlink>
@@ -61,11 +61,7 @@
         </Grid>
 
         <Grid Grid.Column="1" Grid.ColumnSpan="7" Grid.Row="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition Width="4.3*"></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-            </Grid.ColumnDefinitions>
+            
             <ListView HorizontalContentAlignment="Stretch" x:Name="LvClubs" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="1">
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -74,6 +70,7 @@
                             <TextBlock Width="160" FontSize="25" Foreground="White" Text="{Binding Surname}"></TextBlock>
                             <TextBlock Width="160" FontSize="25" Foreground="White" Text="{Binding Name}"></TextBlock>
                             <TextBlock Width="160" FontSize="25" Foreground="White" Text="{Binding Patronymic}"></TextBlock>
+                            <Button Width="160" Height="30" Tag="{Binding Section.idSection}" Click="BtnCreateGroup_Click" x:Name="BtnCreateGroup">Создать группу</Button>
                             <Button Width="160" Height="30" Click="BtnGroups_Click" x:Name="BtnGroups">Список групп</Button>
                         </StackPanel>
                     </DataTemplate>
@@ -82,3 +79,4 @@
         </Grid>
     </Grid>
 </Page>
+

@@ -23,6 +23,14 @@
             <ColumnDefinition Width="10"/>
         </Grid.ColumnDefinitions>
         <Rectangle Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" Fill="#857885"></Rectangle>
+
+        <StackPanel Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center" Margin="10">
+            <TextBlock FontSize="16">
+                <Hyperlink Foreground="White" Click="HyperlinkClick">Главная /</Hyperlink>
+                <Hyperlink Foreground="White">Группы</Hyperlink>
+            </TextBlock>
+        </StackPanel>
+
         <Image Source="/Images/Schoolcon.png" Grid.Column="2" HorizontalAlignment="Center" Width="250" Margin="0 0 100 0"/>
         <StackPanel Orientation="Horizontal" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 20 0" Height="40">
             <TextBlock FontSize="30" Foreground="Orange" Text="{Binding Role.Title}" Height="40"></TextBlock>

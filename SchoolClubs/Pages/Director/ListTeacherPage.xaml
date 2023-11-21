@@ -31,6 +31,13 @@
         </Grid.ColumnDefinitions>
         <Rectangle Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="9" Fill="#857885"></Rectangle>
 
+        <StackPanel Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center" Margin="10">
+            <TextBlock FontSize="16">
+                <Hyperlink Foreground="White" NavigateUri="DirectorHomePage.xaml" >Главная /</Hyperlink>
+                <Hyperlink Foreground="White">Список учителей</Hyperlink>
+            </TextBlock>
+        </StackPanel>
+
         <StackPanel  Grid.Column="6" VerticalAlignment="Center" HorizontalAlignment="Center">
             <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" Foreground="Orange">Зам</TextBlock>
             <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" Foreground="Orange">директора</TextBlock>
@@ -46,15 +53,13 @@
         <Grid Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="7" VerticalAlignment="Top" Margin="10">
             <ScrollViewer HorizontalAlignment="Center" Background="#fdebe1" BorderBrush="#fdebe1">
                 <DataGrid Name="GridListTeacher" ItemsSource="{Binding teacherList}" d:ItemsSource="{d:SampleData ItemCount=25}" 
-                         
-                          
                           SelectedItem="{Binding selectedTeacher}"
                           AutoGenerateColumns="False" FontSize="30">
                     <DataGrid.Columns>
                         <DataGridTemplateColumn  Header="Фамилия" Width="270">
                             <DataGridTemplateColumn.CellTemplate >
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding Surname}" FontSize="25" Padding="5"/>
+                                    <TextBlock Text="{Binding surname}" FontSize="25" Padding="5"/>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
@@ -62,7 +67,7 @@
                         <DataGridTemplateColumn Header="Имя" Width="200">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding Name}" FontSize="25" Padding="5"/>
+                                    <TextBlock Text="{Binding name}" FontSize="25" Padding="5"/>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
@@ -71,7 +76,7 @@
                         <DataGridTemplateColumn Header="Отчество" Width="220">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding Patronymic}" FontSize="25" Padding="5"/>
+                                    <TextBlock Text="{Binding patronymic}" FontSize="25" Padding="5"/>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
@@ -87,7 +92,7 @@
                         <DataGridTemplateColumn Header="Кол-во учеников" Width="260">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding CountStudents}" FontSize="25" Padding="5"/>
+                                    <TextBlock Text="{Binding countStudent}" FontSize="25" Padding="5"/>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>

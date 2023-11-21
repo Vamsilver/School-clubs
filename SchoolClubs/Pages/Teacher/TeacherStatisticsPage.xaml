@@ -38,7 +38,13 @@ xmlns:DVC="clr-namespace:System.Windows.Controls.DataVisualization.Charting;asse
                    HorizontalAlignment="Center" Grid.Column="6" FontSize="30">Марья Ивановна
         </TextBlock>
         <Rectangle Fill="White" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="6" Grid.RowSpan="4"/>
-
+        <StackPanel Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center" Margin="10">
+            <TextBlock FontSize="16">
+                <Hyperlink Foreground="White" NavigateUri="TeacherHomePage.xaml">Главная /</Hyperlink>
+                
+                <Hyperlink Foreground="White">Статистика</Hyperlink>
+            </TextBlock>
+        </StackPanel>
         <UniformGrid Columns="3" Rows="1"  Grid.Row="2" 
                     Grid.Column="1" Grid.ColumnSpan="3">
             

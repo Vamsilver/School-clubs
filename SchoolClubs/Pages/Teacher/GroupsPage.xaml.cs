@@ -1,5 +1,6 @@
 ﻿using SchoolClubs.ADOApp;
 using SchoolClubs.Classes;
+using SchoolClubs.Pages.Director;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,8 +32,29 @@ namespace SchoolClubs.Pages.Teacher
             foreach (Group group in groups)
             {
                 List<Group_Student> grStudentsList = App.Connection.Group_Student.Where(x => x.idGroup == group.idGroup).ToList();
-                List<Group_Student> grStudentsListModified = RemoveSearchDuplicates(grStudentsList);
-                GroupClass grClass = new GroupClass(group, grStudentsListModified.Count, number);
+                List<Group_Student> grStudentsListModified = new List<Group_Student>(grStudentsList);
+                List<Group_Student> grStudentsListModifiedFinal = new List<Group_Student>();
+
+                foreach (var student in grStudentsList)
+                {
+                    Group_Student grStud = App.Connection.Group_Student.Where(x => x.Student.idStudent == student.idStudent && x.idGroup == student.idGroup).ToList().LastOrDefault();
+                    if (grStud.idStudentStatus == 2)
+                    {
+                        List<Group_Student> grStudList = grStudentsListModified.Where(x => x.idGroup_Student == grStud.idGroup_Student).ToList();
+                        foreach (Group_Student grStudent in grStudList)
+                        {
+                            grStudentsListModified.Remove(grStudent);
+                        }
+                    }
+
+                    if (grStud.idStudentStatus == 1)
+                    {
+                        grStudentsListModifiedFinal.Add(grStud);
+                    }
+
+                }
+                var list = RemoveSearchDuplicates(grStudentsListModifiedFinal);
+                GroupClass grClass = new GroupClass(group, list.Count, number);
                 groupsClasses.Add(grClass);
                 number++;
             }
@@ -70,6 +92,18 @@ namespace SchoolClubs.Pages.Teacher
                     TempList.Add(u1);
             }
             return TempList;
+        }
+
+        private void HyperlinkClick(object sender, RoutedEventArgs e)
+        {
+            if (App.CurrentUser.idRole == 1)
+            {
+                NavigationService.Navigate(new DirectorHomePage());
+            }
+            if (App.CurrentUser.idRole == 2)
+            {
+                NavigationService.Navigate(new TeacherHomePage());
+            }
         }
     }
 }

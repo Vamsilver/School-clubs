@@ -28,10 +28,14 @@
             <ColumnDefinition Width="300"/>
         </Grid.ColumnDefinitions>
         <TextBlock Grid.Column="1" Grid.Row="1" FontSize="30" HorizontalAlignment="Center">Логин</TextBlock>
-        <TextBox Grid.Row="3" Grid.Column="1" x:Name="LoginTextBox" Background="#218380"></TextBox>
+        <TextBox Grid.Row="3" Grid.Column="1" FontSize="32" x:Name="LoginTextBox" Background="#218380"></TextBox>
         <TextBlock Grid.Column="1" Grid.Row="5" FontSize="30" HorizontalAlignment="Center">Пароль</TextBlock>
-        <TextBox Grid.Row="7" Grid.Column="1" x:Name="PasswordTextBox" Background="#218380"></TextBox>
+        <PasswordBox Grid.Row="7" Grid.Column="1" FontSize="32" x:Name="PasswordBox" Background="#218380"></PasswordBox>
         <Button Grid.Column="1" Grid.Row="9" FontSize="38" Click="Auth">
-            <TextBlock>Войти</TextBlock></Button>
+            <TextBlock>Войти</TextBlock>
+        </Button>
+        <Image Source="\Images\Schoolcon.png" Grid.Column="1"></Image>
+        <Image Source="\Images\Circles.png" Grid.Column="0" Grid.Row="1" Margin="0,0,30,0" Grid.RowSpan="10"></Image>
+        <Image Source="\Images\Circles.png" Grid.Column="2" Grid.Row="1" Margin="30,0,0,0" Grid.RowSpan="10" ></Image>
     </Grid>
 </Page>

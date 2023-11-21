@@ -59,7 +59,7 @@ namespace SchoolClubs.Pages.Director
                 var currSection = _teacherSectionInfo.Section;
                 var currTeacherId = currSection.idUser;
 
-                var changeData = App.Connection.Section.Where(x => x.idUser == currTeacherId).FirstOrDefault();
+                var changeData = App.Connection.Section.Where(x => x.idSection == currSection.idSection).FirstOrDefault();
                 var selItem = CbSelectTeacher.SelectedItem as TeacherInfo;
                 var selTeacher = selItem.User;
 

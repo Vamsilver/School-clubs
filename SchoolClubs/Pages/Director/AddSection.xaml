@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:SchoolClubs.Pages.Director"
       mc:Ignorable="d" 
       d:DesignHeight="720" d:DesignWidth="1280"
-      Title="AddSection">
+      Title="AddSection"
+      Loaded="PageLoaded">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -30,7 +31,7 @@
         </Grid.ColumnDefinitions>
         <Rectangle Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="9" Fill="#857885"></Rectangle>
         <StackPanel Grid.Column="3" Grid.ColumnSpan="2">
-            <Image Source="C:\Users\besit\Source\Repos\School-clubs\SchoolClubs\Images\Schoolcon.png"></Image>
+            <Image Source="/Images\Schoolcon.png"></Image>
         </StackPanel>
         <StackPanel VerticalAlignment="Center" Orientation="Horizontal" Grid.Column="2">
             <TextBlock FontSize="16">
@@ -40,6 +41,13 @@
 <Hyperlink Foreground="White">/Добавить кружок</Hyperlink>
             </TextBlock>
         </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Column="7" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 20 0" Height="40">
+            <TextBlock  FontSize="30" Foreground="Orange" Text="{Binding Role.Title}" Height="40"></TextBlock>
+            <TextBlock  Margin="20 0 0 0" Text="{Binding Name}" Foreground="Orange" FontSize="30" />
+            <TextBlock  Margin="20 0 0 0" Text="{Binding Surname}" Foreground="Orange" FontSize="30" />
+        </StackPanel>
+
         <Grid Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="4">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
@@ -54,7 +62,7 @@
                 <TextBlock FontSize="20" HorizontalAlignment="Center">Описание</TextBlock>
                 <TextBox Height="30" Foreground="White" x:Name="TbDescription" Background="#857885"></TextBox>
                 <TextBlock FontSize="20" HorizontalAlignment="Center">Учитель</TextBlock>
-                <ComboBox Height="30" x:Name="CbSelectTeacher">
+                <ComboBox Height="60" x:Name="CbSelectTeacher">
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
                             <ComboBoxItem Content="{Binding FullName}"></ComboBoxItem>
@@ -66,7 +74,7 @@
             </StackPanel>
         </Grid>
         <StackPanel Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3">
-            <Image Height="490" Source="C:\Users\besit\source\repos\School-clubs\SchoolClubs\Images\Circles.png"></Image>
+            <Image Height="490" Source="\Images\Circles.png"></Image>
         </StackPanel>
         <StackPanel VerticalAlignment="Center" Grid.Column="6">
             <TextBlock FontSize="16" Foreground="#ffbc42" HorizontalAlignment="Center">Зам</TextBlock>

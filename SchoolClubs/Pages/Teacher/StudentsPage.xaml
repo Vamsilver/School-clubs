@@ -64,5 +64,14 @@
             <Button  Content="Сохранить" FontSize="30" VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="60" Margin="10 10 40 10" Width="300" Click="SaveChangesBtnClick"></Button>
             <Button  Content="Записать ученика на кружок" FontSize="30" VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="60" Margin="10" Width="600" Click="EnrollStudentToClubPage"></Button>
         </StackPanel>
+
+        <StackPanel Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center" Margin="10">
+            <TextBlock FontSize="16">
+                <Hyperlink Foreground="White" NavigateUri="TeacherHomePage.xaml">Главная /</Hyperlink>
+                <Hyperlink Foreground="White" Click="HyperlinkClick">Группы / </Hyperlink>
+                <Hyperlink Foreground="White">Список студентов</Hyperlink>
+            </TextBlock>
+        </StackPanel>
+        
     </Grid>
 </Page>

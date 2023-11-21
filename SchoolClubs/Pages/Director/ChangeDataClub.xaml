@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:SchoolClubs.Pages.Director"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="720" d:DesignWidth="1280"
       Title="ChangeDataClub">
 
     <Grid>
@@ -30,9 +30,12 @@
         </Grid.ColumnDefinitions>
         <Rectangle Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="9" Fill="#857885"></Rectangle>
         <StackPanel Grid.Column="3" Grid.ColumnSpan="2">
-            <Image Source="C:\Users\besit\Source\Repos\School-clubs\SchoolClubs\Images\Schoolcon.png"></Image>
+            <Image Source="\Images\Schoolcon.png"></Image>
         </StackPanel>
         <StackPanel VerticalAlignment="Center" Orientation="Horizontal" Grid.Column="2">
+            <TextBlock FontSize="16">
+<Hyperlink NavigateUri="DirectorHomePage.xaml" Foreground="White">Главная/</Hyperlink>
+            </TextBlock>
             <TextBlock FontSize="16">
 <Hyperlink NavigateUri="Clubs.xaml" Foreground="White">Кружки</Hyperlink>
             </TextBlock>

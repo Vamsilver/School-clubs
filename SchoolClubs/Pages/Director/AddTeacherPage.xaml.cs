@@ -52,23 +52,40 @@ namespace SchoolClubs.Pages.Director
                     MessageBox.Show("Пользователь с таким логином уже существует", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
                 }
-                //_auth = new Authorization(txtLogin.Text, txtPass.Text);
-                //App.Connection.Authorization.Add(_auth);
-                //_teacher = new User(txtName.Text, txtSurname.Text, txtPatronymic.Text, Convert.ToDateTime(date.Text), decimal.Parse(txtExperience.Text), _auth.idAuthorization);
+                _auth = new Authorization();
+                _auth.Login = txtLogin.Text;
+                _auth.Password = txtPass.Text;
+                App.Connection.Authorization.Add(_auth);
 
-
+                _teacher = new User();
+                _teacher.Name = txtName.Text;
+                _teacher.Surname = txtSurname.Text;
+                _teacher.Patronymic = txtPatronymic.Text;
+                _teacher.Birthdate = Convert.ToDateTime(date.Text);
+                _teacher.Experience = decimal.Parse(txtExperience.Text);
+                _teacher.idAuthorization = _auth.idAuthorization;
+                _teacher.idRole = 2;
                 App.Connection.User.Add(_teacher);
+
                 App.Connection.SaveChanges();
                 MessageBox.Show("Добавление прошло успешно!", "Успешно!", MessageBoxButton.OK, MessageBoxImage.Information);
                 NavigationService.Navigate(new ListTeacherPage(director));
             }
             catch
             {
-
                 MessageBox.Show("ОШИБКА", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
+        }
 
+        private void Hyperlink_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new DirectorHomePage());
+        }
+
+        private void Hyperlink_Click_1(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new ListTeacherPage(director));
         }
     }
 }

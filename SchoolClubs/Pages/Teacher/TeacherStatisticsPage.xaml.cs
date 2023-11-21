@@ -155,15 +155,16 @@ namespace SchoolClubs.Pages
 
             var lessonsAmount = timeTables.Count;
             var conductedLessonsAmount = timeTables.Where(z => (bool)z.isRaportCreated).ToList().Count;
-
-            var lessonsAmountProcent = conductedLessonsAmount / ( lessonsAmount / 100 );
+            double lessonsAmountProcent = 0;
+            
+            if (lessonsAmount != 0 || conductedLessonsAmount != 0)
+                lessonsAmountProcent = conductedLessonsAmount / (lessonsAmount / 100);
 
             ((PieSeries)LessonsTaughtChart.Series[0]).ItemsSource =
             new KeyValuePair<string, double>[]
             {
-                new KeyValuePair<string,double>("Проведено", lessonsAmountProcent),
-                new KeyValuePair<string,double>("Не проведено",100 -  lessonsAmountProcent),
-            };
+            new KeyValuePair<string,double>("Проведено", lessonsAmountProcent),
+            new KeyValuePair<string,double>("Не проведено",100 -  lessonsAmountProcent),};
         }
     }
 }

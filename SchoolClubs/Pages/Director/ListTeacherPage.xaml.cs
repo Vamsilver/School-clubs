@@ -1,4 +1,5 @@
 ﻿using SchoolClubs.ADOApp;
+using SchoolClubs.Classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,18 +24,12 @@ namespace SchoolClubs.Pages.Director
     {
         User director;
         List<User> teacherList = new List<User>();
-        List<ADOApp.Section> sectionList = new List<ADOApp.Section>();
-        User selectedTeacher;
-        String _sections = "";
-        int _count = 0;
-
+        TeachersClubs selectedTeacher;
+        List<TeachersClubs> teacherClubsList = new List<TeachersClubs>();
 
         public ListTeacherPage(User _director)
         {
             director = _director;
-
-            //GridListTeacher.ItemsSource = teacherList;
-
             InitializeComponent();
         }
 
@@ -46,25 +41,14 @@ namespace SchoolClubs.Pages.Director
 
         private void CalcInfo()
         {
-            _sections = "";
-            _count = 0;
+            teacherClubsList.Clear();
             teacherList = App.Connection.User.Where(x => x.idRole == 2).ToList();
             foreach (User user in teacherList)
             {
-                sectionList = App.Connection.Section.Where(x => x.idUser == user.idUser).ToList();
-                foreach (ADOApp.Section section in sectionList)
-                {
-                    _sections += section.Title + Environment.NewLine;
-                    _count += App.Connection.Group_Student.Where(x => x.Group.idSection == section.idSection).Count();
-
-                }
-                //user.sections = _sections;
-                //user.CountStudents = _count;
-                _sections = "";
-                _count = 0;
+                teacherClubsList.Add(new TeachersClubs(user));
             }
-
-            GridListTeacher.ItemsSource = teacherList;
+            GridListTeacher.ItemsSource = teacherClubsList;
+            GridListTeacher.Items.Refresh();
         }
 
         private void AddTeacher(object sender, RoutedEventArgs e)
@@ -72,19 +56,17 @@ namespace SchoolClubs.Pages.Director
             NavigationService.Navigate(new AddTeacherPage(director));
         }
 
-
-
         private void DeleteTeacher(object sender, RoutedEventArgs e)
         {
-            selectedTeacher = GridListTeacher.SelectedItem as User;
+            selectedTeacher = GridListTeacher.SelectedItem as TeachersClubs;
             try
             {
-                selectedTeacher = GridListTeacher.SelectedItem as User;
                 if (selectedTeacher != null)
                 {
-                    var deleteService = App.Connection.User.FirstOrDefault(x => x.idUser == selectedTeacher.idUser);
-
-                    App.Connection.User.Remove(deleteService);
+                    var deleteUser = App.Connection.User.FirstOrDefault(x => x.idUser == selectedTeacher.idUser);
+                    var deleteAuth = App.Connection.Authorization.FirstOrDefault(x => x.idAuthorization == selectedTeacher.idAuth);
+                    App.Connection.User.Remove(deleteUser);
+                    App.Connection.Authorization.Remove(deleteAuth);
                     App.Connection.SaveChanges();
                     MessageBox.Show("Учитель уволен", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
@@ -100,6 +82,11 @@ namespace SchoolClubs.Pages.Director
                 return;
             }
             CalcInfo();
+        }
+
+        private void Hyperlink_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new DirectorHomePage());
         }
     }
 }

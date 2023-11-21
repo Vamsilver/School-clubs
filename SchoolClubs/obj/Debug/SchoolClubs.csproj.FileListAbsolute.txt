@@ -56,3 +56,7 @@ C:\Users\vamsi\source\repos\SchoolClubs\SchoolClubs\obj\Debug\Pages\Teacher\Club
 C:\Users\vamsi\source\repos\SchoolClubs\SchoolClubs\obj\Debug\Pages\Teacher\EnrollStudentToClubPage.baml
 C:\Users\vamsi\source\repos\SchoolClubs\SchoolClubs\obj\Debug\Pages\Teacher\GroupsPage.baml
 C:\Users\vamsi\source\repos\SchoolClubs\SchoolClubs\obj\Debug\Pages\Teacher\StudentsPage.baml
+C:\Users\vamsi\source\repos\SchoolClubs\SchoolClubs\obj\Debug\Pages\Director\RaportCheckPage.g.cs
+C:\Users\vamsi\source\repos\SchoolClubs\SchoolClubs\obj\Debug\Pages\Director\RaportCheckPage.baml
+C:\Users\vamsi\source\repos\SchoolClubs\SchoolClubs\obj\Debug\Pages\Director\AddGroupPage.g.cs
+C:\Users\vamsi\source\repos\SchoolClubs\SchoolClubs\obj\Debug\Pages\Director\AddGroupPage.baml

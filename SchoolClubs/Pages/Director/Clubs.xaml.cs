@@ -62,5 +62,12 @@ namespace SchoolClubs.Pages.Director
                 MessageBox.Show("Пожалуйста, выберите секцию", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
+
+        private void BtnCreateGroup_Click(object sender, RoutedEventArgs e)
+        {
+            var id = (int)((Button)sender).Tag;
+            ADOApp.Section section = App.Connection.Section.FirstOrDefault(x => x.idSection == id);
+            NavigationService.Navigate(new AddGroupPage(section));
+        }
     }
 }

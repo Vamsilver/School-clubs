@@ -22,9 +22,9 @@ namespace SchoolClubs.Pages.Director
     public partial class DirectorHomePage : Page
     {
         User director;
-        public DirectorHomePage(User _director)
+        public DirectorHomePage()
         {
-            director = _director;
+            director = App.CurrentUser;
             InitializeComponent();
         }
 
@@ -35,24 +35,24 @@ namespace SchoolClubs.Pages.Director
 
         private void GoStatisticPage(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new DirectorStatisticsPage());
         }
         private void GoRaportPage(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new RaportCheckPage(director));
         }
         private void GoListClub(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new Clubs());
         }
         private void GoTimeTable(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new Timetable());
         }
 
         private void LogOut(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new AuthorizationPage());
         }
 
         private void PageLoaded(object sender, RoutedEventArgs e)

@@ -30,7 +30,7 @@
         </Grid.ColumnDefinitions>
         <Rectangle Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="9" Fill="#857885"></Rectangle>
         <StackPanel Grid.Column="3" Grid.ColumnSpan="2">
-            <Image Source="C:\Users\besit\Source\Repos\School-clubs\SchoolClubs\Images\Schoolcon.png"></Image>
+            <Image Source="\Images\Schoolcon.png"></Image>
         </StackPanel>
 
         <Grid Margin="15 0 0 0" Grid.ColumnSpan="3" Grid.Column="1" Grid.Row="2">
@@ -117,6 +117,7 @@
         </StackPanel>
         <StackPanel VerticalAlignment="Center" Orientation="Horizontal" Grid.Column="2">
             <TextBlock FontSize="16">
+        <Hyperlink NavigateUri="DirectorHomePage.xaml" Foreground="White">Главная/</Hyperlink>
         <Hyperlink NavigateUri="Timetable.xaml" Foreground="White">Расписание</Hyperlink>
             </TextBlock>
             <TextBlock FontSize="16">
